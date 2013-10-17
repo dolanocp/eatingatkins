@@ -1,0 +1,1110 @@
+/*
+Theme Name:     Twenty Eleven Child
+Theme URI: http://wordpress.org/extend/themes/twentyeleven                   
+Description:    Child theme for the Twenty Eleven theme  
+Author:         Paul and Roseanne Dolan                          
+Template:       twentyeleven                             
+Version:        0.1.0
+*/
+@import url("../twentyeleven/style.css?v=2");
+/*RCRC child theme*/
+@font-face {
+    font-family: 'BrannbollFet';
+    src: url('http://eatingatkins.ie/wp-content/uploads/fonts/BrannbollFet.eot');
+    src: url('http://eatingatkins.ie/wp-content/uploads/fonts/BrannbollFet.eot?#iefix') format('embedded-opentype'),
+    local('IM BrannbollFet'), local('IM_FELL_English_Roman'),
+    url('http://eatingatkins.ie/wp-content/uploads/fonts/BrannbollFet.woff')format('woff'),
+    url('http://eatingatkins.ie/wp-content/uploads/fonts/BrannbollFet.svg#BrannbollFet')format('svg'),	
+    url('http://eatingatkins.ie/wp-content/uploads/fonts/BrannbollFet.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BrannbollSmal';
+    src: url('http://eatingatkins.ie/wp-content/uploads/fonts/BrannbollSmal.eot');
+    src: url('http://eatingatkins.ie/wp-content/uploads/fonts/BrannbollSmal.eot?#iefix')format('embedded-opentype'),
+    local('IM BrannbollSmal'), local('IM_FELL_English_Roman'),
+    url('http://eatingatkins.ie/wp-content/uploads/fonts/BrannbollSmal.woff')format('woff'),
+    url('http://eatingatkins.ie/wp-content/uploads/fonts/BrannbollSmal.svg#BrannbollSmal')format('svg'),
+    url('http://eatingatkins.ie/wp-content/uploads/fonts/BrannbollSmal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ufonts.com_gotham-bold';
+    src: url('http://eatingatkins.ie/wp-content/uploads/fonts/ufonts.com_gotham-bold.eot');
+    src: url('http://eatingatkins.ie/wp-content/uploads/fonts/ufonts.com_gotham-bold.eot?#iefix')format('embedded-opentype'),
+    local('IM gotham-bold'), local('IM_FELL_English_Roman'),
+    url('http://eatingatkins.ie/wp-content/uploads/fonts/ufonts.com_gotham-bold.woff')format('woff'),
+    url('http://eatingatkins.ie/wp-content/uploads/fonts/ufonts.com_gotham-bold.svg#ufonts.com_gotham-bold')format('svg'),
+    url('http://eatingatkins.ie/wp-content/uploads/fonts/ufonts.com_gotham-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ufonts.com_gotham-book';
+    src: url('http://eatingatkins.ie/wp-content/uploads/fonts/ufonts.com_gotham-book.eot');
+    src: url('http://eatingatkins.ie/wp-content/uploads/fonts/ufonts.com_gotham-book.eot?#iefix')format('embedded-opentype'),
+    local('IM gotham-book'), local('IM_FELL_English_Roman'),
+    url('http://eatingatkins.ie/wp-content/uploads/fonts/ufonts.com_gotham-book.woff')format('woff'),
+    url('http://eatingatkins.ie/wp-content/uploads/fonts/ufonts.com_gotham-book.svg#ufonts.com_gotham-book')format('svg'),
+    url('http://eatingatkins.ie/wp-content/uploads/fonts/ufonts.com_gotham-book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/*  page structure */
+
+#primary, .singular #primary {
+	margin: 0 -21.7% 0 0;
+}
+#mainContent{
+	margin:0 22% 0 0;
+	float:left;
+	width:78%;
+}
+#content, .singular #content, .left-sidebar.singular #content{
+	background-color:#fff;
+	margin:0;
+	width: 72%;
+	padding:2%;
+	float:left;
+	clear:none;
+}
+#secondary {
+	float: left;
+	margin: 0;
+	width: 20%;
+	padding:0;
+}
+#secondary .widget{
+	padding:15px 5px;
+	float:right;
+	width:100%;
+	margin-top:0;
+	position:relative;
+	text-align:center;
+}
+#tertiary {
+	float: left;
+	width: 15%;
+	margin:0 2% 0 2.1%;
+	padding:10px 5px 30px 5px;
+}
+.error404 #primary #content {
+	margin: 0;
+	width: 75%;
+}
+.error404 #primary #mainContent{
+	margin:0;
+}
+/*********Layout fixes for IE**********/
+#ie9 #tertiary {
+	margin:0 2% 0 1.3%;
+}
+#ie8 #tertiary {
+	margin:0 2% 0 2.5%;
+}
+#ie8 #primary{
+	margin: 0 -21.3% 0 0;
+}
+
+#ie7 #primary{
+	margin: 0 -23% 0 0;
+}
+
+#ie6 #page{ width:100%}
+#ie6 #primary{ margin-right:-30%;width:100%;}
+#ie6 #mainContent{ margin-right:15%;}
+#ie6 #content{ width:55%;}
+#ie6 #secondary .widget, #ie6 #page, #ie6 .dropShadow {
+      filter: none;
+}
+/*********end layout fixes for IE**********/
+/*  page background*/
+body{
+	padding: 0;
+}
+#bg-repeat{
+ 	position:relative;
+	top:-30px;
+}
+#page {
+	position:relative;
+	-moz-box-shadow: 0 0 2em #000;
+	-webkit-box-shadow: 0 0 2em #000;
+	box-shadow: 0 0 2em #000;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microszoom:1;oft.Shadow(Strength=5, Direction=135, Color=#333333)";
+	/* For IE 5.5 - 7 */
+	filter:progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=135, Color=#333333)
+		progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=275, Color=#333333);	
+}
+#ie9 #secondary .widget, #ie9 #page {
+      filter: none;
+}
+#main {
+	width:100%;
+	padding: 24px 0 20px 0;
+	float:left;
+	background-color:#dcdcdc;
+    margin-top:5px;
+}
+
+
+/* drop shadow */
+#secondary .widget, .dropShadow {
+ 	background-color: #fff;
+	position:relative;
+      	border: solid 1px #ccc;
+      	color: #555;
+	z-index:2;
+	-moz-box-shadow: 0 0 1em #999;
+	-webkit-box-shadow: 0 0 2em #999;
+	box-shadow: 0 0 0.7em #999;
+      	zoom: 1;
+      	filter:
+          progid:DXImageTransform.Microsoft.Shadow(strength=1,direction=0,color=#999999),
+          progid:DXImageTransform.Microsoft.Shadow(strength=1,direction=45,color=#999999),
+          progid:DXImageTransform.Microsoft.Shadow(strength=2,direction=90,color=#999999),
+          progid:DXImageTransform.Microsoft.Shadow(strength=3,direction=135,color=#999999),
+          progid:DXImageTransform.Microsoft.Shadow(strength=10,direction=180,color=#999999),
+          progid:DXImageTransform.Microsoft.Shadow(strength=3,direction=225,color=#999999),
+          progid:DXImageTransform.Microsoft.Shadow(strength=2,direction=270,color=#999999),
+          progid:DXImageTransform.Microsoft.Shadow(strength=1,direction=315,color=#999999);
+}
+
+#ie7 #secondary .widget, #ie7 .dropShadow {
+	border:1px solid #999999;
+	filter:none;
+}
+#ie7 #secondary .widget, #ie7 .dropShadow {
+	border:1px solid #999999;
+	filter:none;
+}
+/*header area*/
+#branding {
+	border-top:0px none;
+	background-color:#B71E22;
+	text-align:center;
+}
+#site-title {
+	margin-right:0;
+	padding: 0;
+	font-family:'ufonts.com_gotham-bold', Arial;
+	font-size:8.13em;
+	line-height:0.9em;
+	text-transform:uppercase;
+    letter-spacing:-0.1em;
+}
+#site-title a {
+	color: #fff;
+	font-size:100%;
+	font-weight:inherit;
+	line-height:0.8em;
+}
+#site-title a:hover,
+#site-title a:focus,
+#site-title a:active {
+	color: #fff;
+}
+.site-description {
+	font-size: 2.2em;
+	color:#fff;
+	margin: 1% 0 3% 10%;
+	font-family:'BrannbollFet', Georgia;
+}
+#branding hgroup {
+	margin: 0;
+}
+#access div {
+	margin: 0;
+}
+/* footer area*/
+#site-generator {
+	background:#B71E22;
+	color: #fff;
+}
+#site-generator a {
+	color: #fff;
+	font-weight: normal;
+}
+#site-generator p.disclaimer{
+	width:70%;
+	margin:1% 0 0 15%;
+	line-height:16px;
+	text-align:left;
+}
+
+/*  menu  */
+
+#access {
+	background: #7C1417 url("http://eatingatkins.ie/wp-content/uploads/site_images/menu_bar.png") repeat-y;
+	margin: 0;
+}
+#access ul {
+	font-family:'ufonts.com_gotham-book', Arial;
+    text-transform: uppercase;
+	margin: 0 0 0 10px;
+}
+#access ul ul {
+	top:auto;
+}
+#access ul ul a {
+	width: 200px;
+}
+#access ul ul.sub-menu a{
+	font-family:arial;
+}
+#access .children li:hover > a{
+	margin-left:0;
+	margin-right:0;
+}
+#access li {
+	border-right:1px solid #bcbabb;
+	height:22px;
+	margin:5px 0;
+}
+#access li.page-item-198,#access #menu-item-198, #footerMenu .menu-item-198{
+	border-right:none;
+}
+#access li li{
+	border:none;
+}
+#access a {
+	line-height: 32px;
+	padding: 0 0.8em;
+	font-size:19px;
+	margin:-5px 0 0 0;
+}
+/*   footer menu  */
+#footerMenu{
+	width:60%;
+	margin:0 20%;
+	float:left;
+}
+#footerMenu ul, #footerMenu li{
+	float:left;
+	list-style-type:none;
+	margin-left:0;
+}
+#footerMenu li ul.sub-menu, #footerMenu li ul.sub-menu li{
+	display:none;
+}
+#footerMenu li{
+	padding:0 5px;
+	float:left;
+	border-right:1px solid #fff;
+	line-height:14px;
+}
+#footerMenu li a{
+	font-size:14px;
+	color:#fff;
+}
+#footerMenu .menu-item-1377{ /*remove border from last item in footer menu*/
+	border-right:none;
+}
+/*  Static home page */
+#primary.homePage .entry-header{
+	display:none;
+}
+#primary.homePage .entry-content{
+	padding-top:0px;
+}
+#primary.homePage .site-description {
+	color: #000;
+	font-size: 2.25em;
+	margin: 10% 0 0;
+}
+
+/*carousel on home page */
+#mainContent .promo_slider_wrapper {
+	height:415px; 
+	padding:10px;
+	margin:0px;
+	border:1px solid #e1e1e1;
+	overflow:hidden;
+}
+#mainCarousel .slider_selections span.current {
+	background: #fff url("http://eatingatkins.ie/wp-content/uploads/site_images/sprite.png") no-repeat -598px -298px;
+	width:30px;
+	height:30px;
+	display:block;
+	float:left;
+	margin-right:10px;
+	color:#BD1E23;
+}
+#mainCarousel .slider_selections span{
+	background: #fff url("http://eatingatkins.ie/wp-content/uploads/site_images/sprite.png") no-repeat -398px -298px;
+	width:30px;
+	height:30px;
+	display:block;
+	float:left;
+	margin-right:10px;
+	color:#ACACAC;
+}
+#mainCarousel{
+	text-align:center;
+	padding:29px 0 45px;
+	position:static;
+	height:100%;
+}
+#ie9 #mainCarousel,#ie8 #mainCarousel,#ie7 #mainCarousel{ 
+	margin-left:10px;
+}
+#mainCarousel .promo_slider_nav {
+	bottom:0;
+}
+#mainCarousel .promo_slider_sep {
+	display:none;
+}
+#mainCarousel  .promo_slider .panel-1 { 
+	display:block;
+}
+#mainCarousel .promo_slider img{
+	margin-top:1px;
+}
+#mainCarousel .move_forward.pointer,#mainCarousel .move_backward.pointer{
+	display:none;
+}
+#ie7 #mainCarousel.promo_slider .panel{
+	float:none;
+	position:static;
+}
+
+
+/* article */
+.singular .entry-header,
+.singular .entry-content,
+.singular footer.entry-meta,
+.singular #comments-title {
+	width: 90%;
+}
+.entry-meta, .entry-meta a {
+	font-size: 13px;
+}
+.entry-summary {
+	font-family:Arial;font-size:13px;
+}
+.entry-content h3{
+	font-size: 20px;
+	line-height: 24px;
+	margin-bottom:20px;
+}
+.entry-content img,
+.comment-content img,
+.widget img {
+	max-width: auto;  /*Fluid images for posts, comments, and widgets */
+}
+.wp-caption .wp-caption-text {
+	padding: 10px 0 5px 10px;
+}
+.wp-caption .wp-caption-text:before {
+	content:'';
+}
+.singular.page .hentry {
+	padding: 0 0 0;
+}
+.singular .entry-title {
+	font-size:2.25em;
+	line-height: 1.5em;
+}
+
+/* forms  */
+select {
+	color: #373737;
+	font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	line-height: 1.625;
+}
+select {
+	background: #fafafa;
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+	border: 1px solid #ddd;
+}
+form  select[name=asp]{
+	margin-left:0;
+	width:326px;
+	height:28px;
+	padding:3px;
+	color: rgb(136, 136, 136);
+}
+#partnerReg_form #register{
+	float:left;
+	clear:left; 
+	width:135px;
+	height:44px;
+	border:0;
+	cursor:pointer;
+	cursor:hand;
+	background: #fff url("http://eatingatkins.ie/wp-content/uploads/site_images/sprite.png") no-repeat -850px -700px;
+}
+.wpcf7-submit{
+	background-color: #B71E22;
+    border: 0 none;
+    border-radius: 15px 15px 15px 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: x-large;
+    height: 44px;
+    width: 135px;
+}
+.error{
+	color:red;
+	font-weight:bold;
+	float:left;
+	clear:left;
+}
+input#s { /*search icon*/
+        background: #fff url("http://eatingatkins.ie/wp-content/uploads/site_images/sprite.png") no-repeat -893px -294px;
+}
+/* =Widgets
+----------------------------------------------- */
+
+.widget {
+	margin: 0 0 1em;
+}
+.widget-title {
+	font-size: 1.4em;
+	line-height: 1.8em;
+	font-family:'ufonts.com_gotham-book', Arial;
+}
+
+#secondary .widget-title-twitter {
+	font-family:'Arial';
+}
+/* Advert Widget */
+#secondary #text-2{
+	padding-bottom:5px;
+}
+#secondary .promo_slider_wrapper{
+	margin:0;
+}
+#secondary #advert{
+	height:300px;
+}
+#secondary #advert .promo_slider_excerpt{
+	font-size:16px;
+	line-height:21px;
+	text-align:left;
+	color:#333;
+	padding:0 10px;
+	background:#fff;
+}
+#secondary #advert .promo_slider_excerpt a{
+	color:#09C;
+	font-weight:normal;
+}
+/* Twitter Widget */
+
+.tweet-item
+{
+	border: 1px solid #E4E4E4;
+	background: #FAFAFA;
+	border-bottom: 1px solid #E4E4E4;
+	padding: 8px 4px;
+	overflow: hidden;
+	margin: 5px;
+	border-radius: 10px 10px 10px 10px;
+}
+.tweet-item:hover{
+	background-color:#e1e1e1;
+}
+
+/* search widget */
+#secondary #search-2{
+	height:32px;
+}
+/* =Tag Cloud
+----------------------------------------------- */
+#ie7 #tag_cloud-2 .tagcloud{
+	width:170px;
+}
+#tag_cloud-2,#tag_cloud-2 h3{
+	text-align:center;
+}
+#secondary #tag_cloud-2 h3{
+	float:none;
+}
+
+/* Social Media Panel
+----------------------------------------------- */
+#socialMedia{
+	background-color: #fff;
+}
+#socialMedia #socialText{
+	background: #fff url("http://eatingatkins.ie/wp-content/uploads/site_images/sprite.png") no-repeat 0 -300px;
+	display:block;
+	height:112px;
+	width:117px;
+}
+#socialMedia .socContain{
+	float:left;
+	clear:left;
+	margin:30px 0 0 30px;
+}
+#socialMedia a.socPlatform{
+	text-decoration:none;
+	font-family:'BrannbollFet';
+	font-size:13px;
+	color:#999;
+	float:left;
+	clear:left;
+}
+#socialMedia .socPlatform.rss{
+	margin-left:8px;
+}
+#socialMedia a.socPlatform:hover{
+	text-decoration:none;
+	color:#666;
+}
+a.socialButton {
+	overflow: hidden;
+	position: relative;
+	height: 55px;
+	width: 55px;
+	display:block;
+	margin-bottom:10px;
+	float:left;
+	clear:left;
+}
+a.socialButton img {
+	position: relative;
+}
+a.pinterest img {
+	top: -98px;
+	left: 2px;
+}
+a.twitter img {
+	top: -98px;
+	left: -198px;
+}
+a.fb img {
+	top: -98px;
+	left: -398px;
+}
+a.rss img {
+	top: -98px;
+	left: -598px;
+}
+/* =contact page
+----------------------------------------------- */
+.page-id-1352 #mainContent, .page-id-79 #mainContent{
+	width:78%;
+}
+/* =events page
+----------------------------------------------- */
+.page-id-425 #mainContent{
+	width:78%;
+}
+/* = Food List page
+----------------------------------------------- */
+.page-id-398 #post-398{
+padding-top:0;
+}
+/* =products page
+----------------------------------------------- */
+#primary.full_width .entry-header,#primary.full_width_one_col .entry-header{
+	width:auto;
+}
+#primary.full_width_one_col .entry-content{
+	width:auto;
+}
+#primary.full_width #content{
+	width:78%;
+}
+#primary.full_width_one_col #content{
+	width:90%;
+	margin-left:3%;
+}
+#ie7 #primary.full_width .entry-header{
+	width:11%;
+}
+#ie7 #primary.full_width #content{
+	width:75%;
+}
+#primary.full_width #tertiary{
+	width:12%;
+}
+#productPage .col{
+	position:relative;
+	float:left;
+    right: 50%;
+    width: 100%;
+}
+#primary.full_width #mainContent{
+	margin-right:0.7%;
+}
+#productPage table{
+	width:95%;
+}
+#productPage td.productPic{
+		width:20%;
+}
+#productPage td, #productPage table{
+	border:none;
+	vertical-align:middle;
+}
+#productPage td{
+	padding-bottom:10px;
+}
+#productPage td.prodDesc{
+	border-bottom:1px solid #e1e1e1;
+}
+#productPage td.prodDesc h2 a{
+	color:#000;
+}
+#productPage td.prodDesc h2 a:hover{
+	text-decoration:none;
+}
+.singular #primary.full_width  .entry-content{
+	width:auto;
+}
+#productPage .phase_all, #productPage .phase_two{
+	background-image: url("http://eatingatkins.ie/wp-content/uploads/site_images/sprite.png");
+	background-repeat:no-repeat;
+	display:block;
+	height:28px;
+	width:70px;
+	clear:left;
+}
+#productPage .phase_all{
+	background-position: -140px -550px;
+}
+#productPage .phase_two{
+	background-position: 0px -550px;
+}
+/* = diet phase pages
+----------------------------------------------- */
+.showCarbs{
+	display:table;
+	border-left:2px solid #e1e1e1;
+	border-right:2px solid #e1e1e1;
+	border-bottom:2px solid #e1e1e1;
+}
+.showCarbs tfoot td{
+	border:0px none;
+	width:100%;
+}
+.showCarbs tfoot td a{
+	float:right;
+}
+.entry-content table.showCarbs {
+	border-bottom:1px solid #DDDDDD;
+	margin-bottom:0;
+}
+.hideCarbs{
+	display:none;
+}
+.carbRungs{
+	float:left;
+	width:100%;
+}
+.hideMoreCarbs{
+	background: url("http://eatingatkins.ie/wp-content/uploads/site_images/sprite.png") -600px -550px no-repeat;
+	display:block;
+	height:31px;
+	width:31px;
+	cursor:hand;cursor:pointer;
+}
+#rung10{
+	margin-bottom:10px;
+}
+/*blog specific css - 5 Common Myths:..
+---------------------------------------*/
+
+.atkins_myths{
+	background-color:#FFFFCC;
+	color:black;
+	border:2px solid gray;
+	-moz-box-shadow: 3px 3px 4px #000;
+	-webkit-box-shadow: 3px 3px 4px #000;
+	box-shadow: 3px 3px 4px #000;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+	padding: 5px 30px;
+	text-align:justify;
+}
+#reference{
+	font-family:Gill Sans, sans-serif;
+	font-size:16px;
+	font-weight: 200;
+	color:black;
+}
+#myths {
+    background-color: chocolate;
+    border: 1px solid silver;
+    color: white;
+    font-family: tahoma;
+    font-size: 22px;
+    letter-spacing: 3px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.myth_titles {
+    font-family: Helvetica;
+    letter-spacing: 2px;
+}
+
+/* =New Year New You exhibition
+----------------------------------------------- */
+#health_show{
+	list-style-type:none;
+	margin:0;
+}
+#health_show .photo{
+	float:left;
+}
+#health_show .busDetails{
+	float:left;
+	padding:0;
+	width:60%;
+}
+#health_show .busDetails .business_web{
+	display:block;
+}
+#health_show .exhibitor{
+	list-style-type:none;
+	float:left;
+	width:100%;
+}
+.page-id-1000.singular .entry-title {
+	font-size:2.0em;
+} /*changed font size of the title for the event page only.*/
+
+/* Paypal
+----------------------------------------------- */
+#paypal input.vsubmit, #paypal #paypalbutton{
+	background-color: #22AAFF;
+	background-image: linear-gradient(#22AAFF, #2299FF);
+	border-color: #0088FF #0088FF #004499;
+	color: #FFF;
+	text-shadow: none; 
+	-moz-border-bottom-colors: none; 
+	-moz-border-left-colors: none; 
+	-moz-border-right-colors: none; 
+	-moz-border-top-colors: none; 
+	border-image: none; 
+	border-radius: 3px 3px 3px 3px; 
+	border-style: solid;
+	border-width: 1px;box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+	font-family: Arial;
+	font-size: 11px;
+	font-weight: bold; 
+	height: 23px; 
+	padding: 4px 6px;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+	cursor: pointer; 
+	border-style: solid;
+	border-width: 1px;box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+	line-height: 1;
+	float:right; 
+	clear:both;
+}
+#paypal input.vsubmit{
+	margin-right:15px;
+}
+
+#paypal{
+	border: 1px solid #E1E1E1;
+	float: right; 
+	margin: 0 10px 10px;
+	padding: 10px;
+	width: 250px;
+}
+#paypal #shopping_cart{ 
+	margin-top:15px;
+	width:100%;
+	float:right;
+	padding:0;
+}
+#paypal #ppcheckout td{
+	border:none;
+}
+#paypal #buyTickets{
+	font-weight:bold;
+	font-size:16px;
+	color: #0088FF;
+}
+#paypal #shopping_cart table{
+	border:0px none;
+}
+#schedule thead td{
+	font-weight:bold;
+	background-color:#fafafa;
+}
+#schedule tbody td.time{
+	width:135px;
+}
+#schedule tbody td.talk{
+	font-weight:bold;
+	color:#990000;
+}
+#jp_container_1{
+	margin-bottom:20px;
+}
+/* = Mobile Nav
+----------------------------------------------- */
+/*
+#mobile_nav_btn a.open{
+	background-position:-100px -875px;
+}
+#mobile_nav_btn a.close{
+	background-position:-100px -875px;
+}
+*/
+
+/* =IE7
+/* =Responsive Structure
+----------------------------------------------- */
+
+@media (max-width: 800px) {
+	#main{
+		padding:0;
+		margin:0;
+	}
+	#mainContent{
+		margin:0;
+	}
+	#main #content {
+		margin: 0;
+	}
+	.page-id-79 #mainContent{
+		width:95%;
+	}
+	.page-id-425 #mainContent{
+		width:95%;
+	}
+	#primary.full_width #mainContent{
+		margin:0;
+	}
+	#primary.full_width #content{
+		width:95%;
+	}
+	#primary.full_width #tertiary{
+		width:90%;
+	}
+	#main #primary{
+		margin-bottom:4%;
+	}
+	#main #secondary {
+		margin: 2% 2% 0 4%;
+	}
+	#tertiary{
+		width:94%;
+		margin:2%;
+		padding:2% 1%;
+	}
+	#tertiary #socialMedia .socContain{
+		clear:none;
+		margin:0 0 0 10%;
+	}
+	#socialMedia span#socialText{
+		display:none;
+		background: none;
+	}
+
+}
+@media (max-width: 650px) {
+	#main #content{
+		width:100%;
+	}
+    #branding{
+        padding-bottom:60px;
+    }
+	#mainContent{
+		width:100%;
+	}
+	.site-description {
+		display:none;
+	}
+	#foodList ul{
+		height:auto;
+	}
+	h1#site-title {
+		padding: 0;
+		clear:none;
+		margin-top:10px;
+		font-size: 3em;
+	}
+	#productPage .productPic img{
+		max-width:100px;
+	}
+	/*mobile nav*/
+	#main{
+		margin-top:30px;
+	}
+	#access li.menu-item{
+		width:100%;
+		border-right:0px none;
+	}
+	#mobile_nav_btn{
+		width:50px;
+		height:55px;
+		padding:1px;
+		float:left;
+		top:0;
+		z-index:10000;
+		display:block;
+	}
+	
+	#mobile_nav_btn a{
+		background-image: url("http://eatingatkins.ie/wp-content/uploads/site_images/sprite.png");
+		background-repeat: no-repeat;
+		background-position:-100px -875px;
+		background-attachment: scroll;
+		display:block;
+		background-size:875px 1250px;
+		margin:4px;
+		width:100%;
+		height:50px;
+		top: 0;
+	}
+	#access #menu-header_menu{
+		position:fixed;
+		width:0;
+		opacity:0;
+		padding:20% 0 0 0;
+		height:100%;
+		background: url("http://eatingatkins.ie/wp-content/uploads/site_images/menu_bar.png") repeat-y scroll 0 0 #7C1417;
+		margin:0;
+	}
+	#menu-header_menu > li.hasSub > a:after{ 
+		content:"";
+		background: transparent url("http://eatingatkins.ie/wp-content/uploads/site_images/sprite.png") no-repeat -120px -1900px;
+		margin:10px 30px 0 -50px;
+		height:20px;
+		width:20px;
+		display:block;
+		float:right;
+	}
+	#access #menu-header_menu > li:hover >a, #access #menu-header_menu  a:focus{
+		background-color:#7C1417;
+		background-image:none;
+		color:#fff;
+	}
+	#menu-header_menu > li.hasSub.closeSub > a:after{ 
+		background: transparent url("http://eatingatkins.ie/wp-content/uploads/site_images/sprite.png") no-repeat 0 -1900px;
+	}
+	#menu-header_menu > li.hasSub {
+		height:auto;
+	}
+	#menu-header_menu > li.hasSub > ul > li {
+		margin:5px 0;
+	}
+	#access #menu-header_menu.mobile_nav_open{
+		margin-top:60px;
+	}
+	#access #menu-header_menu.mobile_nav_open li{
+		padding:8px 0;
+		margin:0;
+	}
+	#menu-header_menu.mobile_nav_open  ul.sub-menu, #menu-header_menu.mobile_nav_open  .sub-menu li, #menu-header_menu.mobile_nav_open  .sub-menu li a{
+		width:100%;
+		position:static;
+		margin-top:-4px;
+	}
+	#menu-header_menu.mobile_nav_open .menu_home{
+		display:none;
+	}
+	#menu-header_menu.mobile_nav_open  .sub-menu li a{
+		background-color:#7C1417;
+		color:#fff;
+	}
+	#menu-header_menu {
+		margin:0;
+	}
+	#branding hgroup{
+		background-color:#B71E22;
+		position:fixed;
+		width:100%;
+		height:60px;
+		z-index:10;
+	}
+	header #access {
+		margin:0;
+	}
+	header #access div.menu-header_menu-container{
+		width:100%;
+	}
+	#menu-header_menu.mobile_nav_open .sub-menu li{
+		padding-left:0;
+		padding-right:0;
+	}
+	#menu-header_menu.mobile_nav_open .sub-menu li a{
+		padding-left:0;
+		padding-right:0;
+	}
+}
+@media (max-width: 640px) {
+	#access #menu-header_menu{
+		padding:10% 0 0 0;
+	}
+}
+@media (max-width: 450px) {
+	#tertiary{
+		width:90%;
+	}
+	#tertiary #socialMedia .socContain{
+		margin:0 0 0 2%;
+	}
+	#bg-repeat{
+		background:none;
+	}
+}
+/*
+    Smartphone Landscape Layout: 480px.
+*/
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	#access #menu-header_menu.mobile_nav_open{
+		margin-top:20px;
+	}
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	#bg-repeat{
+		background:none;
+	}
+}
+@media print {
+	#site-title  a{
+		font-size: 21pt;
+	}
+}
+/*   Misc  */
+.ps_promotion footer.entry-meta{display:none;} /*promotion page - author info*/
+
+.phase_resource_box {
+    background: url("/wp-content/uploads/info.png") no-repeat scroll 5px 5px;
+    background-color: #FFFEB1;
+    border: 1px solid #E0DD00;
+    border-radius: 8px 8px 8px 8px;
+    padding: 8px 6px 8px 45px;
+    margin: 0 auto 10px;
+	width: 50%;
+}
+.phase_resource_box a {
+    font-family: arial, verdana, sans-serif;
+    color: #00004E;
+    text-decoration: none;
+}
+
+.phase_resource_box h4{
+	margin-left: 25px;
+	font-size: 1.5em;
+	color: #000000;
+}
+
+.phase_resource_box ul{
+	margin-bottom: 0;
+}
+
+.phase_resource_box a:hover {
+	text-decoration: underline;
+}
+
+img[class*="align"], img[class*="wp-image-"], #content .gallery .gallery-icon img {
+	border: none 0;
+}
